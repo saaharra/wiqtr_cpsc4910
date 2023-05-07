@@ -1,0 +1,244 @@
+  /*Sarah Nguyen
+    hw2.css
+  */
+
+    :root {
+      --primary-color: #8eacf8;
+      --secondary-color: #7545e6;
+      --background-color:  #d5def5;
+      --font-color: #483e61;
+      --dark-mode-primary-color:rgba(148, 119, 255, 0.64);
+      --dark-mode-secondary-color:#a1b8f3; 
+      --dark-bg-color: #2a2438;
+      --dark-font: #e9cbfa;
+    } 
+  
+  body {
+    background-color: #d5def5;
+    color: #483e61;
+    font-size: 25px;
+  }
+
+
+  body.dark-mode {
+    background-color: var(--dark-bg-color);
+    color: var(--dark-font);
+    font-size: 25px;
+  }
+
+  .dark-mode nav {background-color:rgb(85, 61, 171)}
+  .dark-mode a:visited {color: var(--dark-mode-primary-color);}
+  .dark-mode a:hover {color: #a1b8f3;}
+
+  .dark-mode h1{
+    font-size: 72px;
+    text-align: center;
+    color: var(--dark-mode-primary-color);
+  }
+
+  .dark-mode h2{
+    color: rgb(164, 140, 249);
+  }
+
+  .dark-mode h3{
+    color:  rgb(176, 156, 249);
+  }
+
+  /*nav bar styling*/
+  nav {
+    position:fixed;
+    top:0;
+    background-color:#829bdc;
+    height: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 100%;
+}
+
+  nav ul{
+    list-style: none;
+    margin: 0;
+    /*padding: 10px;*/
+    box-sizing: border-box;
+  }
+  
+  nav > ul{
+    display: flex;
+    justify-content: center;
+    height: fit-content;
+  }
+
+  nav > ul > li{
+    display: inline-block;
+  }
+
+  li > a {
+    float: inline-end;
+    color: var(--secondary-color);
+    text-align: center;
+    padding: 14px;
+    width: 23;
+  }
+
+  a, a:visited { color: var(--secondary-color); } 
+  a:hover { color: var(--primary-color); } 
+
+  h1{
+    font-size: 72px;
+    color: var(--primary-color);
+  }
+
+  h2{
+    color:  #84a2ee;
+  }
+
+  h3{
+    color:  #607bc0;
+  }
+
+  h1, h2, h3{
+    font-family: serif;
+  }
+
+
+  #theme-toggle {
+    border-radius: 5px;
+    position: fixed;
+    top:10px;
+    right:10px;
+    box-shadow: 5px 5px 5px gray;
+  }
+
+  #theme-toggle:active {
+      top:8px;
+      right:8px; 
+      box-shadow: none;
+  }
+  
+
+  /*banner stuff*/
+  h1 + img {
+    display: block;
+    height: 100%;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0;
+  }
+
+  /*img styling stuff*/
+  @media screen and (max-width:600) {
+    body > #homepage-content main > section:nth-child(4){
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      gap: 5px;
+      grid-auto-flow: minmax(100px, auto);
+    }
+  }
+
+  @media screen and (min-width: 601px) and (max-width: 1200px) {
+    body > #homepage-content main > section:nth-child(4){
+        display: grid; 
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        grid-auto-rows: minmax(100px, auto);
+    }
+  }
+
+  @media screen and (min-width: 1201px) {
+    body > #homepage-content main > section:nth-child(4) {
+        display: grid; 
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        grid-auto-rows: minmax(100px, auto);
+    }
+  }
+
+  section img{
+    margin: 10px;
+    width: 350px;
+    height: 350px;
+  }
+
+  /*this is for the table for the beverages on the menu*/
+
+  table thead tr td{
+    border-bottom: 3px solid black;
+    background-color: var(--primary-color);
+  }
+
+  tr:nth-child(even){
+      background-color:#6946b9;
+      color:#d5def5;
+  }
+
+  tr:nth-child(odd){
+    background-color:#7c73e6;
+    color:#d5def5;
+  }
+
+  h2{
+    font-weight: bold;
+  }
+
+  table td + td {
+    border-left: 3px solid black;
+  }
+
+
+  tfoot
+  {
+    font-weight: none;
+    font-size: smaller;
+    font-style: italic;
+  }
+  /*this is for the breakfast, lunch, and bakery*/
+  dt{
+    font-weight: bold;
+    margin: 10px 0;
+  }
+ 
+  .gf::before
+  {
+    content: "gf ";
+  }
+
+  .vg::before
+  {
+    content: "vg ";
+  }
+
+  .gf.vg::before
+  {
+    content:"gf vg ";
+  }
+
+  /*this is for the directions page*/
+  iframe{
+    border: none;
+    min-width: 450px;
+  }
+
+  article{
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+
+  span{
+    font-weight: bold;
+  }
+
+  a[href^=tel]{
+    font-style: normal;
+  }
+
+  a[href^=tel]::before{
+    content: "☎ ";
+  }
+
+  .new
+  {
+    font-size: 2em;
+    background-color: var(--secondary-color);
+  }
+
